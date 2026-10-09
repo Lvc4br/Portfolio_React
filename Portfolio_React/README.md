@@ -1,41 +1,29 @@
-# Luca Toniolo — 3D × Code Portfolio
+# Luca Toniolo — React Portfolio
 
-A minimal React/Vite portfolio designed to present 3D work, programming and the intersection between both.
+This repository contains the source code for my current personal portfolio, built with React and Vite.
 
-## Run
+- **Live portfolio:** http://64.181.168.160/portfolio/
+- **Hosting:** Oracle Cloud
+- **Application source:** [`Portfolio_React/`](./Portfolio_React/)
+
+## Run locally
 
 ```bash
+cd Portfolio_React
 npm install
 npm run dev
 ```
 
-## Build
+## Production build
 
 ```bash
+cd Portfolio_React
+npm install
 npm run build
 ```
 
-## Important
+## Deployment notes
 
-Some project cards use CSS-generated placeholder visuals. Replace them with your own renders, screenshots and breakdown images inside `src/assets/` as the projects are ready.
+The application is configured to run under the `/portfolio/` path. The Nginx configuration example is in [`Portfolio_React/nginx-portfolio.conf`](./Portfolio_React/nginx-portfolio.conf).
 
-Review social links and test the contact form before publishing.
-
-## Deploy on Oracle Cloud
-
-Este projeto está configurado para ser servido em `https://SEU-IP/portfolio/`.
-
-- O Vite usa `base: "/portfolio/"`.
-- O React Router usa `/portfolio` como `basename`.
-- As imagens ficam em `src/assets` e são importadas pelo Vite, evitando URLs absolutas quebradas.
-- Apache: use o `.htaccess` incluído para encaminhar rotas do React para `index.html`.
-- Nginx: aplique o bloco de `nginx-portfolio.conf` no `server` que atende `/portfolio/`.
-
-Hierarquia principal:
-
-- `/portfolio/` — Home
-- `/portfolio/work` — Work
-- `/portfolio/work/3d` — 3D
-- `/portfolio/work/code` — Code
-
-Os caminhos antigos `/portfolio/3d` e `/portfolio/programacao` redirecionam para a nova hierarquia.
+**Note:** The current live URL uses HTTP, not HTTPS. Configure TLS on the server and then update the live link to HTTPS if a certificate is available.
